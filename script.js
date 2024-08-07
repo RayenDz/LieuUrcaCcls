@@ -1443,15 +1443,22 @@
  { code:"214017",Lieu:"ST SEMENCE GHRISS "}
  ];
 
- const form = document.getElementById('search_form');
+const form = document.getElementById('search_form');
     const searchResults = document.getElementById('search_results');
 
     form.addEventListener('submit', function(event) {
         event.preventDefault(); // تمنع السلوك الافتراضي لزر الإرسال
 
         const searchQuery = form.search_query.value.trim().toLowerCase();
+
+        // تصفية النتائج بناءً على الاستعلام
         const filteredResults = data.filter(function(item) {
-            return Object.values(item).some(value => value.toLowerCase().includes(searchQuery));
+            // قم بإزالة المسافات الزائدة وأحرف السطر من القيم
+            const normalizedItemCode = item.code.trim().toLowerCase();
+            const normalizedItemLieu = item.lieu.trim().toLowerCase();
+
+            // تحقق من تطابق الاستعلام مع أي من القيم
+            return normalizedItemCode.includes(searchQuery) || normalizedItemLieu.includes(searchQuery);
         });
 
         displayResults(filteredResults);
