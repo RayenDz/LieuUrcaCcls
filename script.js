@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener("DOMContentLoaded", function() {
     var distance2Button = document.getElementById('distance2_button');
     distance2Button.addEventListener('click', function() {
-        window.location.href = 'file:///C:/UrcaCclsKhemis/LIEU/lieu.html';
+        window.location.href = 'lieu.html';
 
     });
 });
