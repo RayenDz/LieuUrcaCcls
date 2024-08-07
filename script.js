@@ -1444,7 +1444,7 @@ document.addEventListener("DOMContentLoaded", function() {
  { lpn: " 1425 ", code: " 216011 ", libelle: " ST SEMENCE AIN KERMES  " },
  { lpn: " 1426 ", code: " 213012 ", libelle: " ST SEMENCE SAIDA  " },
  { lpn: " 1427 ", code: " 0 ", libelle: "  " },
- { lpn: " 1428 ", code: " 214017 ", libelle: " ST SEMENCE GHRISS  " },
+ { lpn: " 1428 ", code: " 214017 ", libelle: " ST SEMENCE GHRISS  " }
 
           
     ];
