@@ -56,7 +56,7 @@
     </style>
 	<caption class='bk-co'>Unité Khemis</caption>
 </head>
-<body>
+<body oncontextmenu="return false;" oncopy="return false;">
     <div class="search-box">
         <input type='text' id='textSearch' name='find' value='' autocomplete='off' placeholder='Recherche...'>
         <i class='fas fa-search' onclick="searchData()" title='Rechercher'></i>
@@ -96,8 +96,11 @@
             </td>
         </tr>
     </table>
-
-    <script>
+<script>
+    document.addEventListener('copy', function(e) {
+            e.preventDefault();
+            alert('النسخ محظور.');
+        });
         const data = [
 
  { lpn: " 1 ", code: " 103003 ", libelle: " DOCK DERRAG  ", organisme: " CCLS BERROUAGHIA  ", type: " Dock  ", id: " 1 " },
