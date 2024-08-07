@@ -1,4 +1,5 @@
  document.addEventListener("DOMContentLoaded", function() {
+
     // التعامل مع الأزرار
     var distance1Button = document.getElementById('distance1_button');
     distance1Button.addEventListener('click', function() {
@@ -1442,7 +1443,7 @@
  { code:"214017",Lieu:"ST SEMENCE GHRISS "}
  ];
 
-    const form = document.getElementById('search_form');
+ const form = document.getElementById('search_form');
     const searchResults = document.getElementById('search_results');
 
     form.addEventListener('submit', function(event) {
@@ -1469,9 +1470,8 @@
             // إنشاء رأس الجدول
             thead.innerHTML = `
                 <tr>
-                    
                     <th>Code</th>
-                    <th>lieu</th>
+                    <th>Lieu</th>
                 </tr>
             `;
 
@@ -1479,7 +1479,6 @@
             results.forEach(function(result) {
                 const row = document.createElement('tr');
                 row.innerHTML = `
-                   
                     <td>${result.code}</td>
                     <td>${result.lieu}</td>
                 `;
