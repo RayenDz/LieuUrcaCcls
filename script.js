@@ -1,21 +1,17 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // التعامل مع الأزرار
     var distance1Button = document.getElementById('distance1_button');
     distance1Button.addEventListener('click', function() {
         window.location.href = 'file:///C:/UrcaCclsKhemis/LIEU/Distance/HTML.HTML';
-
     });
-});
 
-
-document.addEventListener("DOMContentLoaded", function() {
     var distance2Button = document.getElementById('distance2_button');
     distance2Button.addEventListener('click', function() {
         window.location.href = 'lieu.html';
-
     });
-});
 
-document.addEventListener("DOMContentLoaded", function() {
+    // بيانات البحث
+
     const data = [
         { lpn: " 1 ", code: " 103003 ", libelle: " DOCK DERRAG  " },
  { lpn: " 2 ", code: " 103004 ", libelle: " DOCK K.EL-BOUKHARI  " },
@@ -1456,17 +1452,12 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault(); // تمنع السلوك الافتراضي لزر الإرسال
 
         const searchQuery = form.search_query.value.trim().toLowerCase();
-        const filteredResults = data.filter(function(line) {
-            return line.toLowerCase().includes(searchQuery);
+        const filteredResults = data.filter(function(item) {
+            return Object.values(item).some(value => value.toLowerCase().includes(searchQuery));
         });
 
         displayResults(filteredResults);
     });
-
-
-
-    
-    
 
     function displayResults(results) {
         searchResults.innerHTML = ''; // قم بمسح النتائج السابقة
@@ -1477,7 +1468,11 @@ document.addEventListener("DOMContentLoaded", function() {
             const resultList = document.createElement('ul');
             results.forEach(function(result) {
                 const listItem = document.createElement('li');
-                listItem.textContent = result;
+                listItem.innerHTML = `
+                    <strong>LPN:</strong> ${result.lpn}<br>
+                    <strong>Code:</strong> ${result.code}<br>
+                    <strong>Libelle:</strong> ${result.libelle}
+                `;
                 resultList.appendChild(listItem);
             });
             searchResults.appendChild(resultList);
