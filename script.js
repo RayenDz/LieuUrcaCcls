@@ -1,12 +1,3 @@
-﻿document.addEventListener("DOMContentLoaded", function() {
-    var distanceButton = document.getElementById('distance_button');
-    distanceButton.addEventListener('click', function() {
-        window.location.href = 'http://105.96.0.195:2023/distance.php?strPage=6&user=1&prs=40&find=';
-
-    });
-});
-
-
 document.addEventListener("DOMContentLoaded", function() {
     var distance1Button = document.getElementById('distance1_button');
     distance1Button.addEventListener('click', function() {
